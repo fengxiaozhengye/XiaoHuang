@@ -1,0 +1,51 @@
+# 开发环境配置
+
+spring:
+  # MySQL 主数据库
+  datasource:
+    url: jdbc:mysql://localhost:3306/edusmart?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    username: root
+    password: ${MYSQL_PASSWORD:123456}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 300000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  # Spring AI (通义千问 OpenAI兼容协议)
+  ai:
+    openai:
+      api-key: ${AI_API_KEY:sk-placeholder}
+      base-url: ${AI_BASE_URL:https://dashscope.aliyuncs.com/compatible-mode/v1}
+      chat:
+        options:
+          model: ${AI_MODEL:qwen-plus}
+          temperature: 0.7
+          max-tokens: 4096
+
+# PostgreSQL 向量库
+pgvector:
+  url: jdbc:postgresql://localhost:5432/edusmart_vector
+  username: ${PG_USERNAME:postgres}
+  password: ${PG_PASSWORD:postgres}
+
+# MinIO 对象存储
+minio:
+  endpoint: http://localhost:9000
+  access-key: ${MINIO_ACCESS_KEY:minioadmin}
+  secret-key: ${MINIO_SECRET_KEY:minioadmin}
+  bucket-name: edusmart-resources
+
+# JWT
+jwt:
+  secret: ${JWT_SECRET:EduSmart2026SecretKeyForJWTTokenGenerationMustBeLongEnough}
+  expiration: 86400000
