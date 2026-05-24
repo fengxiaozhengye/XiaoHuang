@@ -1,29 +1,37 @@
+import { useEffect, useState } from 'react'
 import { Card, Col, Row, Statistic } from 'antd'
 import { BookOutlined, ClockCircleOutlined, TrophyOutlined, FireOutlined } from '@ant-design/icons'
+import { getOverview } from '../../api/analytics'
 
 export default function Dashboard() {
+  const [data, setData] = useState<any>(null)
+
+  useEffect(() => {
+    getOverview().then((res) => setData((res as any).data)).catch(() => {})
+  }, [])
+
   return (
     <div>
       <h2>学习概览</h2>
       <Row gutter={16} style={{ marginBottom: 24 }}>
         <Col span={6}>
           <Card>
-            <Statistic title="学习课程数" value={0} prefix={<BookOutlined />} />
+            <Statistic title="学习课程数" value={data?.activePaths ?? 0} prefix={<BookOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
           <Card>
-            <Statistic title="累计学习时长(h)" value={0} prefix={<ClockCircleOutlined />} />
+            <Statistic title="累计学习时长(h)" value={data?.totalDurationMinutes ?? 0} prefix={<ClockCircleOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
           <Card>
-            <Statistic title="掌握知识点" value={0} prefix={<TrophyOutlined />} />
+            <Statistic title="掌握知识点" value={data?.completedKnowledgePoints ?? 0} prefix={<TrophyOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
           <Card>
-            <Statistic title="连续学习天数" value={0} prefix={<FireOutlined />} />
+            <Statistic title="学习记录数" value={data?.totalRecords ?? 0} prefix={<FireOutlined />} />
           </Card>
         </Col>
       </Row>

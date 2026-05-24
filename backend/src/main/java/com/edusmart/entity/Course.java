@@ -1,5 +1,6 @@
 package com.edusmart.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -30,6 +31,7 @@ public class Course {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "creator_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private User creator;
 
     @Column(nullable = false, length = 20)

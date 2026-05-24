@@ -8,6 +8,7 @@ const Login = lazy(() => import('./pages/Login'))
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 const Profile = lazy(() => import('./pages/Profile'))
 const CourseList = lazy(() => import('./pages/Course'))
+const CourseDetail = lazy(() => import('./pages/Course/detail'))
 const LearningPath = lazy(() => import('./pages/LearningPath'))
 const Resource = lazy(() => import('./pages/Resource'))
 const Chat = lazy(() => import('./pages/Chat'))
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
           <Route path="course" element={<CourseList />} />
+          <Route path="course/:id" element={<CourseDetail />} />
           <Route path="learning-path" element={<LearningPath />} />
           <Route path="resource" element={<Resource />} />
           <Route path="chat" element={<Chat />} />

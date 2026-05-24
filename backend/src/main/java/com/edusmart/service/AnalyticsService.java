@@ -4,7 +4,6 @@ import com.edusmart.entity.LearningPath;
 import com.edusmart.entity.LearningRecord;
 import com.edusmart.repository.LearningPathRepository;
 import com.edusmart.repository.LearningRecordRepository;
-import com.edusmart.repository.LearningResourceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

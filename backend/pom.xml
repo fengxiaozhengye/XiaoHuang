@@ -125,6 +125,12 @@
             <version>2.5.0</version>
         </dependency>
 
+        <!-- Jackson Hibernate module for lazy loading -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-hibernate5-jakarta</artifactId>
+        </dependency>
+
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>

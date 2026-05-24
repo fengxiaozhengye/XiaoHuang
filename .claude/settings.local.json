@@ -39,7 +39,25 @@
       "Bash(docker --version)",
       "Bash(powershell *)",
       "Bash(mvn spring-boot:run -q)",
-      "Bash(curl -s http://localhost:8080/api/health)"
+      "Bash(curl -s http://localhost:8080/api/health)",
+      "Bash(curl *)",
+      "Bash(npm run *)",
+      "Bash(echo \"=== GET /api/auth/me ===\")",
+      "Bash(echo \"\")",
+      "Bash(echo \"=== POST /api/course ===\")",
+      "Bash(echo \"=== PUT /api/course/1/publish ===\")",
+      "Bash(echo \"=== GET /api/course/list ===\")",
+      "Bash(taskkill //F //PID 55728)",
+      "Bash(mvn spring-boot:run)",
+      "Bash(echo \"=== POST /api/knowledge/course/1/import ===\")",
+      "Bash(echo \"=== GET /api/knowledge/graph/1 ===\")",
+      "Bash(echo \"=== GET /api/knowledge/course/1 ===\")",
+      "Bash(echo \"=== PUT /api/profile/3 ===\")",
+      "Bash(echo \"=== GET /api/profile/me ===\")",
+      "Bash(echo \"=== GET /api/profile/3/summary ===\")",
+      "Bash(echo \"=== Send Message ===\")",
+      "Bash(awk '{print $5}')",
+      "Bash(taskkill //F //PID 7584)"
     ]
   }
 }

@@ -21,14 +21,14 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
 
-  # Spring AI (通义千问 OpenAI兼容协议)
+  # Spring AI (DeepSeek OpenAI兼容协议)
   ai:
     openai:
-      api-key: ${AI_API_KEY:sk-placeholder}
-      base-url: ${AI_BASE_URL:https://dashscope.aliyuncs.com/compatible-mode/v1}
+      api-key: ${AI_API_KEY:sk-7c3a5c47bf944cfea689a39e7747f204}
+      base-url: ${AI_BASE_URL:https://api.deepseek.com}
       chat:
         options:
-          model: ${AI_MODEL:qwen-plus}
+          model: ${AI_MODEL:deepseek-chat}
           temperature: 0.7
           max-tokens: 4096
 
